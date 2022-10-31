@@ -57,7 +57,7 @@ btnSave.addEventListener('click', (e)=>{
 		}
 
 	}
-	const timestamp = new Date.getTime();
+	const timestamp = new Date().getTime();
 	doc.save("YUGIOHCARDS" + timestamp + ".pdf");
 	input.value = '';
 },false);
