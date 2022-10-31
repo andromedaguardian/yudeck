@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yu-Gi-Oh Card Print</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+        :root, body {
+        max-width: 100%;
+        font-size: 14px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        vw: 100;
+        vh: 100;
+
+      }
+
+      div {
+        justify-content: center;
+        align-items: center;
+        margin: 1em auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      button {
+        border: 1px solid rgba(0,70,0);
+        border-radius: 2em;
+        background: lime;
+        color: black;
+        padding: 0.2em 0.5em;
+        margin: 1em;
+        font-size: 2em;
+        cursor: pointer;
+      }
+
+      header {
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 1em;
+      }
+
+      p {
+        align: center;
+      }
+
+      .error { 
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+      <header>
+        <h1>Yu-Gi-Oh!</h1>
+        <h3>gerador de arquivo para impressão.</h3>
+      </header>
+      <div>
+        <input id="input" type="file" multiple accept="image/jpg, image/png, image/jpeg" style="display:none">
+        <button id="btn">Selecione os arquivos</button>
+        <button id="btn-save">Salvar</button>
+      </div>
+      <div id="preview">
+        <p>Nenhum arquivo Selecionado.</p>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+      <script src="script.js"></script>
+  </body>
+</html>
