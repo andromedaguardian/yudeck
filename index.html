@@ -1,74 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Yu-Gi-Oh Card Print</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <style>
-        :root, body {
-        max-width: 100%;
-        font-size: 14px;
-      }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
-      body {
-        vw: 100;
-        vh: 100;
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:opsz,wght@5..1200,400;5..1200,700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 
-      }
-
-      div {
-        justify-content: center;
-        align-items: center;
-        margin: 1em auto;
-        display: flex;
-        flex-direction: column;
-      }
-
-      button {
-        border: 1px solid rgba(0,70,0);
-        border-radius: 2em;
-        background: lime;
-        color: black;
-        padding: 0.2em 0.5em;
-        margin: 1em;
-        font-size: 2em;
-        cursor: pointer;
-      }
-
-      header {
-        text-align: center;
-        margin: 0 auto;
-        margin-top: 1em;
-      }
-
-      p {
-        align: center;
-      }
-
-      .error { 
-        color: red;
-      }
-    </style>
+    <title>Yu-Deck Gerador</title>
   </head>
   <body>
-      <header>
-        <h1>Yu-Gi-Oh!</h1>
-        <h3>gerador de arquivo para impressão.</h3>
-      </header>
-      <div>
-        <input id="input" type="file" multiple accept="image/jpg, image/png, image/jpeg" style="display:none">
-        <button id="btn-select">Selecione os arquivos</button>
-        <button id="btn-save">Salvar</button>
-      </div>
-      <div id="preview">
-        <p>Nenhum arquivo Selecionado.</p>
-      </div>
+      <main>
+        <header>
+          <div class="header-image">
+            <img src="images/Yugioh_Logo.png" alt="logo image">
+          </div>
+          <h1>Yu-deck</h1>
+          <h2>gerador de arquivo para impressão de cartas</h2>
+        </header>
+        <div class="content">
+          <input id="input" type="file" multiple accept="image/jpg, image/png, image/jpeg" style="display:none">
+          <button id="btn-select" >Selecione os arquivos</button>
+          <button id="btn-save" disabled aria-disabled="true">Salvar</button>
+          <div id="preview">
+            <p>Nenhum arquivo Selecionado</p>
+          </div>
+        </div>
+      </main>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
       <script src="script.js"></script>
   </body>

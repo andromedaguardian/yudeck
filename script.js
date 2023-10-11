@@ -18,15 +18,6 @@ btnSelect.addEventListener('click', (e)=>{
 function generatePDF(){
 	const numberOfFiles = input.files.length
 
-	if(numberOfFiles === 0){
-		clearPreview();
-		const para = document.createElement('p');
-		para.textContent = "Para salvar, selecione os arquivos primeiro";
-		para.className="error";
-		preview.appendChild(para);
-		return;
-	}
-
 	const doc = new jsPDF({unit: 'in', format:'a4'});
 	
 	const col = 3;
@@ -53,9 +44,14 @@ function generatePDF(){
 		}
 
 	}
+
 	const timestamp = new Date().getTime();
 	doc.save("YUGIOHCARDS" + timestamp + ".pdf");
-	input.value = '';
+
+	input.value = "";
+	btnSave.setAttribute("disabled", "disabled");
+	preview.innerHTML = "Concluído";
+	preview.style.color = "chartreuse";
 }
 
 
@@ -65,9 +61,16 @@ function updatePreview(){
 	const numberOfFiles = curFiles.length;
 	const para = document.createElement("p");
 	if(numberOfFiles === 0){
+		btnSave.setAttribute("disabled", "disabled");
+		btnSave.ariaDisabled = true;
 		para.textContent = "Nenhum arquivo Selecionado";
 	}else {
-		para.textContent = numberOfFiles + ' arquivos selecionados';
+		btnSave.removeAttribute("disabled");
+		btnSave.ariaDisabled = false;
+
+		let text = (numberOfFiles === 1 ) ? ' arquivo selecionado' : ' arquivos selecionados';
+
+		para.textContent = numberOfFiles + text;
 	}
 	preview.appendChild(para);
 }
