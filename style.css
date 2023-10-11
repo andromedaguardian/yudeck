@@ -19,6 +19,7 @@ html {
 
 body {
     min-height: 100vh;
+    min-height: 100dvh;
     background: #101010;
 
     font-family: 'Playfair', serif;
